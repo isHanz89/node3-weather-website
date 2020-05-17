@@ -8,6 +8,7 @@ const forecast = require('./utils/forecast.js')
 //1) configuring the Library/Framework
 const express = require('express')
 const app = express()
+const port = process.env.PORT || 3000
 
 const publicDirectoryPath = path.join(__dirname, '../public')
 const partialsPath = path.join(__dirname, '../templates/partials')
@@ -143,6 +144,6 @@ app.get('*', (req, res) => {
 // app.com/about
 
 //3) start the server
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
